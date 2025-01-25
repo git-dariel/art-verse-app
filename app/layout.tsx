@@ -8,9 +8,18 @@ export const metadata: Metadata = {
   title: "ArtVerse - A Journey Through Arts",
   description:
     "Explore the world's most iconic works of visual, performing, and literary arts in a modern digital showcase.",
-  icons: {
-    icon: '/shakespeare-logo.webp'
-  },
+  icons: [
+    {
+      rel: 'icon',
+      url: '/shakespeare-logo.webp',
+      type: 'image/webp'
+    },
+    {
+      rel: 'apple-touch-icon',
+      url: '/shakespeare-logo.webp',
+      type: 'image/webp'
+    }
+  ],
   openGraph: {
     title: "ArtVerse - A Journey Through Arts",
     description: "Explore the world's most iconic works of visual, performing, and literary arts in a modern digital showcase.",
