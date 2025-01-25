@@ -8,6 +8,21 @@ export const metadata: Metadata = {
   title: "ArtVerse - A Journey Through Arts",
   description:
     "Explore the world's most iconic works of visual, performing, and literary arts in a modern digital showcase.",
+  icons: {
+    icon: '/shakespeare-logo.webp'
+  },
+  openGraph: {
+    title: "ArtVerse - A Journey Through Arts",
+    description: "Explore the world's most iconic works of visual, performing, and literary arts in a modern digital showcase.",
+    images: ['/shakespeare-logo.webp'],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "ArtVerse - A Journey Through Arts",
+    description: "Explore the world's most iconic works of visual, performing, and literary arts in a modern digital showcase.",
+    images: ['/shakespeare-logo.webp'],
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
