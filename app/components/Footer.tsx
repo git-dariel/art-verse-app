@@ -1,12 +1,24 @@
 import { motion } from "framer-motion";
-import { GithubIcon, TwitterIcon, InstagramIcon, LinkedinIcon } from "lucide-react";
+import { GithubIcon, Facebook, InstagramIcon, LinkedinIcon } from "lucide-react";
 
 export function Footer() {
   const socialLinks = [
-    { icon: <GithubIcon size={20} />, href: "#", label: "GitHub" },
-    { icon: <TwitterIcon size={20} />, href: "#", label: "Twitter" },
-    { icon: <InstagramIcon size={20} />, href: "#", label: "Instagram" },
-    { icon: <LinkedinIcon size={20} />, href: "#", label: "LinkedIn" },
+    { icon: <GithubIcon size={20} />, href: "https://github.com/git-dariel", label: "GitHub" },
+    {
+      icon: <Facebook size={20} />,
+      href: "https://www.facebook.com/dariel.avila.129",
+      label: "Twitter",
+    },
+    {
+      icon: <InstagramIcon size={20} />,
+      href: "https://www.instagram.com/_darielavila/",
+      label: "Instagram",
+    },
+    {
+      icon: <LinkedinIcon size={20} />,
+      href: "https://www.linkedin.com/in/darielavila/",
+      label: "LinkedIn",
+    },
   ];
 
   const artInstitutions = {
@@ -126,6 +138,7 @@ export function Footer() {
                 whileTap={{ scale: 0.95 }}
                 className="p-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors"
                 aria-label={social.label}
+                target="_blank"
               >
                 {social.icon}
               </motion.a>

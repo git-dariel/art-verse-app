@@ -1,49 +1,40 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Navigation } from "./components/Navigation";
-import { ArtSection } from "./components/ArtSection";
-import { Footer } from "./components/Footer";
-import { artData } from "./data/artData";
+import { useState, useEffect } from "react";
+import { MainNavigation } from "./components/MainNavigation";
+import { HeroSection } from "./components/landing/HeroSection";
+import { FeaturedArt } from "./components/landing/FeaturedArt";
+import { AboutSection } from "./components/landing/AboutSection";
+import { ContactSection } from "./components/landing/ContactSection";
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState("visual");
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900">
-      <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
+    <main className="min-h-screen bg-black relative overflow-hidden pt-10">
+      <MainNavigation isLanding />
 
-      <main className="container mx-auto px-4 pt-24 pb-12">
-        <motion.section
-          variants={staggerContainer}
-          initial="initial"
-          animate="animate"
-          className="space-y-12"
-        >
-          {activeSection === "visual" && (
-            <ArtSection title="Visual Arts" items={artData.visualArts} />
-          )}
+      {/* Animated gradient background */}
+      <div
+        className="absolute inset-0 opacity-30"
+        style={{
+          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(147, 51, 234, 0.3), transparent 25%)`,
+        }}
+      />
 
-          {activeSection === "performing" && (
-            <ArtSection title="Performing Arts" items={artData.performingArts} />
-          )}
-
-          {activeSection === "literary" && (
-            <ArtSection title="Literary Arts" items={artData.literaryArts} />
-          )}
-        </motion.section>
-
-        <Footer />
-      </main>
-    </div>
+      <HeroSection />
+      <FeaturedArt />
+      <AboutSection />
+      <ContactSection />
+    </main>
   );
 }
