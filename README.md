@@ -2,8 +2,6 @@
 
 ArtVerse is a modern web application that bridges the gap between traditional art appreciation and digital technology. Built with Next.js and React, it offers an immersive platform for exploring various forms of art through an interactive and engaging interface.
 
-![ArtVerse Preview](public/preview.png)
-
 ## ✨ Features
 
 - **Interactive Art Gallery**
