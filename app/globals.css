@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Dark scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(17 24 39 / 0.2); /* bg-gray-900/20 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(55 65 81 / 1); /* bg-gray-700 */
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(75 85 99 / 1); /* bg-gray-600 */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(55 65 81) rgb(17 24 39 / 0.2);
+}
+
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 10, 10, 10;

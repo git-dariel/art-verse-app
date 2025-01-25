@@ -1,5 +1,9 @@
+"use client";
+
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { ArtCard } from "./ArtCard";
+import { ArtModal } from "./ArtModal";
 
 interface ArtItem {
   title: string;
@@ -7,6 +11,7 @@ interface ArtItem {
   description: string;
   image: string;
   reference: string;
+  complete_description?: string;
 }
 
 interface ArtSectionProps {
@@ -15,6 +20,19 @@ interface ArtSectionProps {
 }
 
 export function ArtSection({ title, items }: ArtSectionProps) {
+  const [selectedArt, setSelectedArt] = useState<ArtItem | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleArtClick = (art: ArtItem) => {
+    setSelectedArt(art);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedArt(null);
+  };
+
   return (
     <>
       <motion.h2
@@ -31,9 +49,11 @@ export function ArtSection({ title, items }: ArtSectionProps) {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
         {items.map((art, index) => (
-          <ArtCard key={art.title} {...art} index={index} />
+          <ArtCard key={art.title} {...art} index={index} onClick={() => handleArtClick(art)} />
         ))}
       </motion.div>
+
+      <ArtModal isOpen={isModalOpen} onClose={handleCloseModal} art={selectedArt} />
     </>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 
 interface ArtCardProps {
@@ -7,9 +9,18 @@ interface ArtCardProps {
   image: string;
   reference: string;
   index: number;
+  onClick: () => void;
 }
 
-export function ArtCard({ title, creator, description, image, reference, index }: ArtCardProps) {
+export function ArtCard({
+  title,
+  creator,
+  description,
+  image,
+  reference,
+  index,
+  onClick,
+}: ArtCardProps) {
   return (
     <motion.div
       key={title}
@@ -17,7 +28,8 @@ export function ArtCard({ title, creator, description, image, reference, index }
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
       whileHover={{ scale: 1.02 }}
-      className="art-card group"
+      className="art-card group cursor-pointer"
+      onClick={onClick}
     >
       <div className="relative overflow-hidden rounded-lg mb-4">
         <motion.img

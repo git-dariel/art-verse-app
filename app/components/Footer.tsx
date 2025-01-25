@@ -133,26 +133,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-
-      {/* Bottom Bar */}
-      {/* <div className="py-6 border-t border-white/5">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-400">© 2024 ArtVerse. All rights reserved.</p>
-          <motion.div
-            className="flex gap-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-          >
-            <a href="#" className="text-xs text-gray-400 hover:text-white transition-colors">
-              Terms & Privacy
-            </a>
-            <a href="#" className="text-xs text-gray-400 hover:text-white transition-colors">
-              Image Credits
-            </a>
-          </motion.div>
-        </div>
-      </div> */}
     </motion.footer>
   );
 }
