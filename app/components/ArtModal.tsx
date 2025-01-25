@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Volume2, Square } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 interface ArtModalProps {
   isOpen: boolean;
@@ -79,7 +80,14 @@ export function ArtModal({ isOpen, onClose, art }: ArtModalProps) {
                 {/* Image Section */}
                 <div className="relative h-[60vh]">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20 z-[1]" />
-                  <img src={art.image} alt={art.title} className="w-full h-full object-cover" />
+                  <Image
+                    src={art.image}
+                    alt={art.title}
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
                   <div className="absolute bottom-0 left-0 right-0 p-8 z-[2]">
                     <h2 className="text-3xl md:text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
                       {art.title}

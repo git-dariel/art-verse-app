@@ -58,3 +58,7 @@ body {
 .art-image {
   @apply rounded-lg object-cover w-full aspect-video;
 }
+
+html {
+  scroll-behavior: smooth;
+}

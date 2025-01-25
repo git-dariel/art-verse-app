@@ -59,8 +59,8 @@ export function Footer() {
             ArtVerse
           </motion.h2>
           <p className="text-sm text-gray-400">
-            Exploring the world's most iconic works of visual, performing, and literary arts in a
-            modern digital showcase.
+            Exploring the world&apos;s most iconic works of visual, performing, and literary arts in
+            a modern digital showcase.
           </p>
         </div>
 

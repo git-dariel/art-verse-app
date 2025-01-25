@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { artData } from "@/app/data/artData";
+import Image from "next/image";
 
 const featuredArt = [
   artData.visualArts.find((art) => art.title === "The Starry Night"),
@@ -29,11 +30,16 @@ export function FeaturedArt() {
           className="relative group"
         >
           <div className="aspect-[3/4] rounded-xl overflow-hidden bg-gradient-to-br from-purple-900/20 to-black">
-            <img
-              src={art?.image}
-              alt={art?.title}
-              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
-            />
+            {art && art.image && (
+              <Image
+                src={art.image}
+                alt={art.title || ""}
+                width={400}
+                height={300}
+                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                priority
+              />
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
               <h3 className="text-lg font-semibold mb-1">{art?.title}</h3>

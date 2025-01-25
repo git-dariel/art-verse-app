@@ -204,7 +204,7 @@ The ballet combines elements of childhood fantasy, holiday tradition, and classi
       description:
         "A passionate opera about love, jealousy, and freedom, set in southern Spain. The work features some of the most recognizable melodies in opera.",
       image:
-        "https://i0.wp.com/tommacinneswriter.com/wp-content/uploads/2022/05/maxresdefault-2.jpeg?fit=1200%2C675&ssl=1",
+        "https://www.kennedy-center.org/globalassets/education/resources-for-educators/classroom-resources/artsedge/media/understanding-opera/carmen-2-169.jpg",
       reference: "Opéra-Comique, Paris",
       complete_description: `Carmen, premiered in 1875, is Georges Bizet's masterpiece and one of the most popular operas ever written. Set in Seville, Spain, this tale of passion, jealousy, and tragedy revolutionized opera with its realistic depiction of life, raw emotions, and memorable music.
 
