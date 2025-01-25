@@ -18,7 +18,7 @@ export function ContactSection() {
             Get in Touch
           </h2>
           <p className="text-gray-400 text-lg mb-12">
-            Have questions or suggestions? We'd love to hear from you.
+            Have questions or suggestions? We&apos;d love to hear from you.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
